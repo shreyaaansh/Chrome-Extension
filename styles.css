@@ -1,3 +1,4 @@
+/* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
   margin: 0;
@@ -5,77 +6,89 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+.popup {
+  width: 350px;
+  background: #fff;
 }
 
-.popup{
-    width: 350px;
+
+.popup :where(.picker, header, .all-colors) {
+  display: flex;
+  align-items: center;
+}
+.popup .picker {
+
+  padding: 30px 0;
+  background: #E3F2FD;
+  justify-content: center;
 }
 
-.popup :where(.picker, header, .all-colors, .color){
-    display: flex;
-    align-items: center;
+
+.picker #color-picker {
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #5372F0;
+  transition: 0.3s ease;
 }
 
-.popup .picker{
-    background: #e3f2fd;
-    padding: 30px 0;
-    
-    justify-content: center;
+
+#color-picker:hover {
+  background: #2c52ed;
+}
+.picked-colors {
+  margin: 10px 15px;
 }
 
-.picker #color-picker{
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 10px 20px;
-    background: #5372f0;
+
+.picked-colors header {
+  justify-content: space-between;
+}
+header .title {
+  font-size: 1rem;
 }
 
-.picked-colors{
-    margin: 10px 15px;
+
+header .clear-all {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5372F0;
+}
+header .clear-all:hover {
+  color: #143feb;
 }
 
-.picked-colors header{
-    justify-content: space-between;
+
+.picked-colors.hide {
+  display: none;
+}
+.picked-colors .all-colors {
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 10px 0 15px;
 }
 
-.picked-colors .clear-all{
-    color: #5372f0;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
 
-.all-colors{
-    margin: 10px 0;
-    flex-wrap: wrap;
+.all-colors .color {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: calc(100% / 3);
 }
-
-.all-colors .color{
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: calc(100% /3);
+.all-colors .rect {
+  height: 21px;
+  width: 21px;
+  display: block;
+  margin-right: 8px;
+  border-radius: 5px;
 }
-
-.all-colors .color .rect{
-    display: block;
-    height: 22px;
-    width: 22px;
-    margin-right: 8px;
-    border-radius: 5px;
-    background: #5372f0;
-}
-
-.all-colors .color .value{
-    font-size: 0.96rem;
-    font-weight: 500;
-    text-transform: uppercase;
+.all-colors .color span {
+  font-size: 0.96rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Open sans";
 }
