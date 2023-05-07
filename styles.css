@@ -66,6 +66,12 @@ header .clear-all:hover {
 .picked-colors.hide {
   display: none;
 }
+
+
+
+
+
+
 .picked-colors .all-colors {
   flex-wrap: wrap;
   list-style: none;
